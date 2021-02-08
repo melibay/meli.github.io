@@ -1,0 +1,25 @@
+
+.img {
+    text-align: center;
+    margin-top: 200px;
+
+}
+
+.button {
+    text-align: center;
+}
+
+.bottom {
+    text-align: center;
+}
+
+.search {
+    text-align: center;
+}
+
+.search input {
+    border-radius: 30px;
+    width: 33%;
+    height: 20px;
+    border: 2px solid #C0C0C0;
+}
