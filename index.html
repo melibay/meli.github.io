@@ -1,48 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>jQuery</title>
+    <meta charset="utf-8">
+    <title>Google</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        a{
+            color: gray;
+        }
+    </style>
 </head>
+
 <body>
-<div class="container">
-    <div class="mt-2 mb-2">
-        <button  style="background-color: #721c24" id="load" class="float-right btn btn-primary">Load data</button>
-    </div>
-    <div class="mt-2">
-        <table class="table table-striped">
-            <thead>
-            <tr style="background-color: gold">
-                <th>Title</th>
-                <th>Body</th>
-            </tr>
-            </thead>
-            <tbody id="table-body">
-
-            </tbody>
-
-        </table>
-    </div>
+<div style="text-align: right;word-spacing: 10px;margin-right: 2%;margin-top: 1%">
+    <a href="https://mail.google.com/mail/&amp;ogbl" target="_top">Почта</a>
+    <a href="https://www.google.co.uz/imghp?hl=ru&amp;ogbl" target="_top">Картинки</a>
 </div>
+
+<div class="img">
+    <img width="300" src="img/google.jpg" alt=""> <br>
+</div>
+
+<form action="https://google.com/search?q=" method="get">
+    <div class="search">
+        <input type="text"  name="q" placeholder="Введите поисковый запрос или URL"> <br>
+    </div>
+</form>
+<br>
+
+<div class="button">
+    <button type="button" class="btn btn-light">поиск в Google</button>
+    <button type="button" class="btn btn-light">Мне повезёт!</button>
+</div>
+<br>
+
+<div class="bottom">
+    <p>Сервисы Google доступны на разных языках: <a href="https://google.com/translate" style="color: blue ">English</a> </p>
+</div>
+
+<div class="fixed-bottom card-footer a">
+    <div><p style="padding-top: 1px;"><a href="">Узбекистан</a></p></div>
+    <div>
+        <a href="https://about.google/?utm_source=google-UZ&amp;utm_medium=referral&amp;utm_campaign=hp-footer&amp;fg=1">Всё о Google</a>
+        <a style="margin-left: 2%" href="https://www.google.com/intl/ru_uz/ads/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&amp;utm_source=google.com&amp;utm_medium=referral&amp;utm_campaign=google_hpafooter&amp;fg=1">Реклама</a>
+        <a style="margin-left: 2%" href="https://www.google.com/services/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&amp;utm_source=google.com&amp;utm_medium=referral&amp;utm_campaign=google_hpbfooter&amp;fg=1">Для бизнеса</a>
+        <a style="margin-left: 2%" href="https://google.com/search/howsearchworks/?fg=1">  Как работает Google Поиск </a>
+        <a style="margin-left: 30%" href="https://policies.google.com/privacy?hl=ru-UZ&amp;fg=1">Конфиденциальность</a>
+        <a style="margin-left: 2%" href="https://policies.google.com/privacy?hl=ru-UZ&amp;fg=1">Конфиденциальность</a>
+        <a style="margin-left: 2%" href="">Настройки</a>
+    </div>
+
+</div>
+
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jQuery.js"></script>
-<script>
-    $(document).ready(function () {
-
-        $('#load').click(function () {
-            $.getJSON("https://jsonplaceholder.typicode.com/posts/", function (result) {
-                let table = $('#table-body')
-                table.empty();
-                for (const element of result) {
-                    let text = '<tr>' +
-                        '<td style="color: black">' + element.title + '</td>' +
-                        '<td style="color: darkorange">' + element.body + '</td>' +
-                        '</tr>';
-                    table.append(text);
-                }
-            });
-        })
-    });
-</script>
 </body>
 </html>

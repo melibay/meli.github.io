@@ -1,7 +1,7 @@
 
 .img {
     text-align: center;
-    margin-top: 200px;
+    margin-top: 150px;
 
 }
 
@@ -19,7 +19,25 @@
 
 .search input {
     border-radius: 30px;
-    width: 33%;
-    height: 20px;
+    width: 36%;
+    height: 38px;
     border: 2px solid #C0C0C0;
+    outline: None;
 }
+
+input:hover{
+    box-shadow: 1px 1px 4px 2px #007bff;
+}
+
+a {
+     overflow: hidden;
+     position: relative;
+     bottom: 0;
+     width: 100%;
+ }
+
+div a:hover {
+    color: grey;
+    text-decoration: underline;
+}
+

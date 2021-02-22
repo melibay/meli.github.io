@@ -1,3 +1,40 @@
 git add .
 git commit -m "comment"
 git push origin master
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<div class="row">
+    <div class="offset-3 col-6">
+        <input id="search" class="offset-4 col-4" type="text" name="q">
+        <button id="search_button" class="btn btn-primary">Search</button>
+    </div>
+</div>
+
+<div class="row" id="content">
+
+</div>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jQuery.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#search_button').click(function () {
+            let q = $('#search').val();
+            $.getJSON("https://api.giphy.com/v1/gifs/search?api_key=NNqutKGAgtiDv4XtJXAzwSLcPJmTdK1r&q=" + q, function (result) {
+                for (const element of result.data) {
+                    let text = "<div class=\"col-3\">";
+                    text += "<img src=\""+ element.images.original.url +"\">";
+                    text += "</div>";
+                    $('#content').append(text);
+                }
+            });
+        })
+    });
+</script>
+</body>
+</html>
